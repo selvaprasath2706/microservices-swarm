@@ -14,7 +14,7 @@ services:
       restart_policy:
         condition: on-failure
     networks:
-      - my-network
+      - microservices-network
 
   mongo-service:
     image: mongo:latest
@@ -28,7 +28,7 @@ services:
       restart_policy:
         condition: on-failure
     networks:
-      - my-network
+      - microservices-network
 
   vue-app-service:
     image: 'selvaprasath27/vue-app:latest'
@@ -41,8 +41,8 @@ services:
       restart_policy:
         condition: on-failure
     networks:
-      - my-network
+      - microservices-network
 
 networks:
-  my-network:
+  microservices-network:
     driver: overlay
